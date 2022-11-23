@@ -1,0 +1,165 @@
+:root {
+    --maincol: #2b3037;
+    --textcol: #ffffff;
+    --blocktextcol: rgb(255, 255, 255);
+    --pagecol: rgb(47, 44, 61);
+    --radius: 25px;
+    --mainblockcol: #374052;
+    --num: 0px;
+}
+
+body, html {
+    border: 0;
+}
+
+body {
+    background-color: var(--maincol);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    background-image: radial-gradient( rgba(255, 255, 255, 0.2) 8%, transparent 8% );
+    background-position: 0% 0%;
+    background-size: 5vmin 5vmin;
+    position: relative;
+    transition: background-position 350ms ease;
+    z-index: 2;
+    background-position: var(--num) 0%;
+}
+
+    body:hover {
+        background-position: 12% 0%;
+    }
+
+.content {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+    color: var(--textcol);
+    border-radius: var(--radius);
+    width: calc(vw +0)
+}
+
+.topnav {
+    text-align: center;
+    
+    overflow: hidden;
+    color: var(--textcol);
+    border-top: 10px;
+}
+
+    .topnav img {
+        width: 17px;
+    }
+
+    .topnav NavLink {
+        float: left;
+        display: block;
+        color: var(--textcol);
+        padding: 0px;
+        text-align: center;
+        text-decoration: none;
+        
+        
+        width: calc(92vw / 3);
+        padding-bottom: 12px;
+        padding-top: 12px;
+        
+    }
+
+        .topnav .NavLink:hover {
+            background-color: lightblue;
+            color: black;
+            opacity: 1;
+            background-position: -10% 0%;
+        }
+
+* {
+    box-sizing: border-box;
+}
+
+.lower {
+    color: var(--textcol);
+    border-radius: var(--radius);
+    padding: 0em 25px;
+    width: 25%;
+   
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--textcol);
+    font-weight: bold;
+    font-size: larger;
+}
+
+.textblock {
+    border-style: solid;
+    border-radius: var(--radius);
+     padding-top:25px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    color:var(--blocktextcol);
+    width: 73%;
+    float: left;
+    background-color:var(--mainblockcol);
+}
+
+img {
+    width: 300px;
+}
+mudbutton {
+    border-style: solid;
+    border-radius: var(--radius);
+    padding-left: 25px;
+    padding-bottom: 25px;
+    color: var(--blocktextcol);
+    width: 73%;
+    float: left;
+    background-color: var(--mainblockcol);
+}
+}
+
+
+
+
+@media only screen and (max-width: 830px) {
+    .lower {
+        float:left;
+    }
+
+
+    .textblock {
+        width: 100%;
+    }
+
+    .lower {
+        width: max-content;
+    }
+
+    body {
+        font-size: 125%;
+        background-image: radial-gradient( rgba(255, 255, 255, 0.2) 17%, transparent 8% );
+    }
+
+    .topnav a {
+        float: none;
+        width: auto;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    .header {
+        width: calc(vw + 0)
+    }
+
+    a {
+        font-size: 1em;
+    }
+}

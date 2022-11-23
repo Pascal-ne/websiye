@@ -1,0 +1,80 @@
+﻿@page "/About" 
+<MudStack>
+<div class="textblock">
+<h2>Staff Initial creator program example:</h2>
+<MudItem>
+    <MudTextField Variant="@Variant.Filled" style="margin-right:50px;"   Label="enter name" @bind-Value="Name"  ></MudTextField>
+    <MudButton Variant="@Variant.Filled" Style="margin-top:25px; margin-bottom:25px;" OnClick="Buttonclick2">submit name</MudButton>
+    
+        <MudField Label="Output" Variant="Variant.Text">@initials</MudField>
+    </MudItem>
+    <MudItem>
+     <MudExpansionPanel  Text="Source code" MaxHeight="150" >
+        int CommaPosition;
+        
+            CommaPosition = Name.IndexOf(" ");
+            string surname = Name.Substring(CommaPosition + 1);
+            string Forename = Name.Substring(0, CommaPosition);
+            int length2 = surname.Length;
+            char[] chararr = new char[3];
+            chararr[0] = Forename[0];
+            chararr[1] = surname[0];
+            chararr[2] = surname[length2 - 1];
+            string init = new string(chararr);
+            initials = init.ToUpper();
+    </MudExpansionPanel>
+    </MudItem>
+
+</div>
+</MudStack>
+
+@code {
+    public bool ButtonClicked { get; set; } = true;
+    public string Text { get; set; } = "Praesent imperdiet interdum volutpat. Sed varius tellus in...";
+    public string Src  = "css\\up-arrow.png";
+    public string Name = "";
+    public string initials = "";
+    public int num = 0;
+    public bool ButtonClicked2 { get; set; } = false;
+    void ButtOnClick()
+    {
+
+        if(ButtonClicked == true)
+        {
+            ButtonClicked = false;
+            Text = $" Praesent imperdiet interdum volutpat. Sed varius tellus in ipsum viverra luctus. Maecenas bibendum placerat justo, at euismod erat auctor vel. Curabitur arcu sapien, tincidunt sed dignissim ut, vestibulum nec lorem. Fusce id velit felis. Quisque sem neque, venenatis tincidunt volutpat at, porttitor vitae nulla. Donec a urna ornare purus laoreet efficitur sit amet eget enim. Curabitur orci arcu, imperdiet ut semper nec, condimentum ac turpis. Nullam molestie lectus non tristique lobortis.";
+            Src = $"css\\white-down-arrow-png-2.png";
+        }
+        else
+        {
+            ButtonClicked = true;
+            Text = $"Praesent imperdiet interdum volutpat. Sed varius tellus in...";
+            Src = $"css\\up-arrow.png"; 
+        }
+
+    }
+    void Buttonclick2()
+    {
+        if (ButtonClicked2 = true)
+        {
+
+            int CommaPosition;
+
+            CommaPosition = Name.IndexOf(" ");
+            string surname = Name.Substring(CommaPosition + 1);
+            string Forename = Name.Substring(0, CommaPosition);
+            int length2 = surname.Length;
+            char[] chararr = new char[3];
+            chararr[0] = Forename[0];
+            chararr[1] = surname[0];
+            chararr[2] = surname[length2 - 1];
+            string init = new string(chararr);
+            initials = init.ToUpper();
+
+        }
+    }
+
+
+
+}
+
